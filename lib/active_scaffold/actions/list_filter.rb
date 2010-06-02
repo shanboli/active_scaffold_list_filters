@@ -66,7 +66,7 @@ module ActiveScaffold::Actions
 
         # set our conditions
         find_options = filter.find_options
-        conditions = find_options[:conditions] unless find_options.nil?        
+        conditions = find_options[:conditions] unless find_options.nil?
         self.active_scaffold_conditions = merge_conditions(self.active_scaffold_conditions, conditions)
 
         # set our joins
@@ -89,8 +89,8 @@ module ActiveScaffold::Actions
       flashes << "Searching on: #{params[:search]}" unless params[:search].nil? || params[:search] == ""
       flashes << "Filtering on: #{verbose_filter.join(', ')}" unless verbose_filter.empty?
       flash[:info] = flashes.join(" | ")
-      if flash[:info] == ""
-        flash[:info] = nil
+      if flash[:info].blank?
+        flash.delete(:info)
       end
     end
 
