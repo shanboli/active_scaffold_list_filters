@@ -1,5 +1,5 @@
 module ActiveScaffold::Config
-  class ListFilter < Base  
+  class ListFilter < Base
     self.crud_type = :read
 
     def initialize(core_config)
@@ -13,7 +13,7 @@ module ActiveScaffold::Config
     # --------------------------
     # the ActionLink for this action
     cattr_accessor :link
-    @@link = ActiveScaffold::DataStructures::ActionLink.new('list_filter', :label => :filter, :type => :table, :security_method => :list_filter_authorized?)
+    @@link = ActiveScaffold::DataStructures::ActionLink.new('list_filter', :label => :filter, :security_method => :list_filter_authorized?)
 
     # instance-level configuration
     # ----------------------------
