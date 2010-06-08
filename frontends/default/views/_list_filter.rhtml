@@ -16,11 +16,11 @@
 		<% filter_config.filters.each do |filter| %>
 			<div class="filter_handle" title="<%=as_(filter.label)%>"><canvas width=22 height=150></canvas><!--[if IE]><div class="filter_trigger"></div><![endif]--></div>
 		<% end %>
-		
-		<% 
+
+		<%
 		id = params[:eid] || params[:controller]
 		session_index = "as:#{id}"
-		filter_session_base = session[session_index]["list_filter"] unless session[session_index]["list_filter"].nil?		
+		filter_session_base = session[session_index]["list_filter"] unless session[session_index]["list_filter"].nil?
 		filter_config.filters.each do |filter|
 				filter_session = filter_session_base[filter.filter_type] unless filter_session_base.nil?
 				filter_session = filter_session[filter.name.to_s] unless filter_session.nil?
@@ -30,7 +30,7 @@
 				<h3><%=as_(filter.label)%></h3>
 				<%= render :partial => filter.filter_type, :locals => { :filter => filter, :filter_session => filter_session } -%>
 			</div>
-		<% end %>	
+		<% end %>
 </div>
 
 <br style='clear: left;' />
@@ -44,7 +44,7 @@
 "$('list_filter_input').setValue('reset');" +
 "$('#{list_filter_form_id}').onsubmit();" +
 "$('#{list_filter_form_id}').up('div').remove();" +
-"return false;"  %> 
+"return false;"  %>
 
 
 <%= loading_indicator_tag(:action => :list_filter) %>
