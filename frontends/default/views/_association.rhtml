@@ -13,6 +13,6 @@
     	<div style='display: inline; float: left; width: 17em; overflow: hidden;'>
 				<%= content_tag(:label, 
 						check_box_tag(list_filter_input_name(filter) + "[]",
-							"#{value.id}",session_value) + "&nbsp;#{value.to_label}") %>
+							"#{value.id}",session_value) + " #{value.to_label}") %>
 			</div>
 <% end -%>
