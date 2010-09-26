@@ -1,7 +1,7 @@
 ### What's new with this folk?
  * Works with AS 2.3 branch and RoR 2.3.8
  * Works with IE 7&8, folked from http://github.com/redhatcat/active_scaffold_list_filters
- * Fixes display of &nbsp;
+ * Fixes display of &-n-b-s-p;
  
 ActiveScaffoldListFilters
 -------------------------
